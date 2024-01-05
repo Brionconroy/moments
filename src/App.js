@@ -1,9 +1,21 @@
-import './App.css';
+import { Container } from 'react-bootstrap';
+import styles from './App.module.css';
+import Navbar from './components/NavBar';
+import { Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
+    <div className={styles.App}>
+      <Navbar/>
+      <Container className={styles.Main}>
+        <Switch>
+          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route exact path="/signin" render={() => <h1>Sign in</h1>} />
+          <Route exact path="/signup" render={() => <h1>Sign up</h1>} />
+          <Route render={() => <p>Page Not Found!</p>} />
+        </Switch>
+      </Container>
     </div>
   );
 }
