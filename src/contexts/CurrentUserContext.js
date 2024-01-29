@@ -7,8 +7,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 export const CurrentUserContext = createContext()
 export const SetCurrentUserContext = createContext()
 
-export const useCurrntUser = () => useContext(CurrentUserContext);
-export const useSetCurrntUser = () => useContext(SetCurrentUserContext);
+export const useCurrentUser = () => useContext(CurrentUserContext);
+export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 
 export const CurrentUserProvider = ({children}) => {
