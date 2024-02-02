@@ -14,3 +14,32 @@ export const fetchMoreData = async (resource, setResource) => {
     }));
   } catch (err) {}
 };
+
+export const folloHelper = (profile, clickedProfile, following_id) => {
+  return profile.id === clickedProfile.id
+  ? //This is the profile i clicked on,
+  // update its follower count amd set its follwing id
+    {
+      ...profile,
+      followers_count: profile.followers_count + 1,
+      following_id
+    }
+  : profile.is_owner
+  ? // this is the profile of the logged in user
+    // update its followers count
+    {...profile, followers_count: profile.following_count + 1}
+  :
+    profile;
+}
+
+export const unfollowHelper = (profile, clickedProfile) => {
+  return profile.id === clickedProfile.id
+    ? {
+        ...profile,
+        followers_count: profile.followers_count - 1,
+        following_id: null,
+      }
+    : profile.is_owner
+    ? { ...profile, following_count: profile.following_count - 1 }
+    : profile;
+}
