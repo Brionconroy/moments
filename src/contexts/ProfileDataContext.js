@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -34,7 +35,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
   };
 
@@ -56,7 +57,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -71,7 +72,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
